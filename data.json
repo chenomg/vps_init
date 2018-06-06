@@ -1,0 +1,17 @@
+{
+    "port_passwd":[
+        {
+            "server_port": 1234,
+            "password": 1234
+        }
+    ],
+    "he_info":[
+        {
+            "username": "abc",
+            "password": "1234abc",
+            "zoneid": 1234,
+            "recordid": 1234,
+            "name": "abc.com"
+        }
+    ]
+}
