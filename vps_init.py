@@ -1,19 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-'''
-# =============================================================================
-#      FileName: vps_init.py
-#      Desc: update the ip setting in Configuration file
-#            after updated the server location in bandwagon
-#            使用前请先将信息补全
-#        Author: Jase Chen
-#         Email: xxmm@live.cn
-#      HomePage: https://jase.im/
-#       Version: 0.0.1
-#       License: GPLv2
-#    LastChange: 2018-06-07 01:15:54
-#       History:
-# =============================================================================
+'''
+# =============================================================================
+#      FileName: vps_init.py
+#      Desc: update the ip setting in Configuration file
+#            after updated the server location in bandwagon
+#            使用前请先将信息补全
+#        Author: Jase Chen
+#         Email: xxmm@live.cn
+#      HomePage: https://jase.im/
+#       Version: 0.0.1
+#       License: GPLv2
+#    LastChange: 2018-06-07 01:15:54
+#       History:
+# =============================================================================
 '''
 
 import socket
@@ -46,7 +46,7 @@ def get_config():
 # 从data.json文件中获取服务器端口和密码
 def data_json_to_dict():
     # return:dict{'server_port': 1234, 'password': 1234}
-    file_name = '/root/init/data.json'
+    file_name = 'data.json'
     with open(file_name, 'r') as f:
         dic = json.load(fp=f)
     return dic
