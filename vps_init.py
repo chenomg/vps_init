@@ -1,19 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-'''
-# =============================================================================
-#      FileName: vps_init.py
-#      Desc: update the ip setting in Configuration file
-#            after updated the server location in bandwagon
-#            使用前请先将信息补全
-#        Author: Jase Chen
-#         Email: xxmm@live.cn
-#      HomePage: https://jase.im/
-#       Version: 0.0.1
-#       License: GPLv2
-#    LastChange: 2018-06-07 01:15:54
-#       History:
-# =============================================================================
+'''
+# =============================================================================
+#      FileName: vps_init.py
+#      Desc: update the ip setting in Configuration file
+#            after updated the server location in bandwagon
+#            使用前请先将信息补全
+#        Author: Jase Chen
+#         Email: xxmm@live.cn
+#      HomePage: https://jase.im/
+#       Version: 0.0.1
+#       License: GPLv2
+#    LastChange: 2018-06-07 01:15:54
+#       History:
+# =============================================================================
 '''
 
 import socket
@@ -78,6 +78,7 @@ def restart_ss_for_some_time():
         system(cmd_restart_ss)
         sleep(10000)
 
+
 # 更新he.net信息
 def update_he():
     he_info_dict = data_json_to_dict()['he_info'][0]
@@ -87,7 +88,17 @@ def update_he():
     he_recordid = he_info_dict['recordid']
     he_name = he_info_dict['name']
     he_change_ip.update_DNS_IP(get_host_ip(), he_username, he_password,
-                                he_zoneid, he_recordid, he_name)
+                               he_zoneid, he_recordid, he_name)
+
+
+def mkdir():
+    init_dir = '~/init/'
+    if not os.path.exists(init_dir):
+        try:
+            os.makedir(init_dir)
+            os.chdir(init_dir)
+        except:
+            pass
 
 
 def main():
