@@ -16,6 +16,7 @@
 
 import requests
 
+
 def update_DNS_IP(ip, username, password, zoneid, recordid, name):
     # 此处为登陆HE.NET用的账号信息
     Login_data = {'email': username, 'pass': str(password), 'submit': 'Login!'}
@@ -41,7 +42,8 @@ def update_DNS_IP(ip, username, password, zoneid, recordid, name):
     # 登录用URL
     url = 'https://dns.he.net/'
     # 更新IP信息页URL
-    url_changeIP = 'https://dns.he.net/?hosted_dns_zoneid={}'.format(zoneid) + '&menu=edit_zone&hosted_dns_editzone'
+    url_changeIP = 'https://dns.he.net/?hosted_dns_zoneid={}'.format(
+        zoneid) + '&menu=edit_zone&hosted_dns_editzone'
     with requests.Session() as s:
         s.get(url)
         # 添加请求头
@@ -51,9 +53,11 @@ def update_DNS_IP(ip, username, password, zoneid, recordid, name):
         # 提交更新IP表单
         s.post(url_changeIP, data=update_IP)
 
+
 def main():
     # update_DNS_IP('5.5.5.5')
     pass
+
 
 if __name__ == "__main__":
     main()

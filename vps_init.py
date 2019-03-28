@@ -97,8 +97,15 @@ def mkdir():
         try:
             os.makedir(init_dir)
             os.chdir(init_dir)
-        except:
+        except Exception:
             pass
+
+
+def upadte_cert():
+    """
+    定期更新ssl证书
+    """
+    pass
 
 
 def main():
